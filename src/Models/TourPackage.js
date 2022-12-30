@@ -12,10 +12,23 @@ const TourPackageSchema = new mongoose.Schema(
       required: true,
     },
 
-    image: [{ img: { type: String } }],
+    image: {
+      type: String,
+      required: true,
+    },
 
     address: {
       type: String,
+    },
+
+    hotel_name: {
+      type: String,
+      required: true,
+    },
+
+    room_type: {
+      type: String,
+      required: true,
     },
 
     description: {
