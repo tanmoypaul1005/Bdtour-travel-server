@@ -9,7 +9,7 @@ const BookingSchema = new mongoose.Schema({
         min: 3
     },
 
-    packageID: { type: mongoose.Schema.Types.ObjectId, ref: "TourPackage", required: true },
+    tourPackageId: { type: mongoose.Schema.Types.ObjectId, ref: "TourPackage", required: true },
 
     email: {
         required: true,
