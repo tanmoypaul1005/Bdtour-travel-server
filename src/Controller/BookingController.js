@@ -6,7 +6,7 @@ module.exports.addBooking=(req,res,next)=>{
 
   const{ name,email,tourPackageId,room_type,address,phone}=req.body; 
 
-  Booking.findOne({email:email ,packageID:tourPackageId})
+  Booking.findOne({email:email ,tourPackageId:tourPackageId})
   .exec((error,data)=>{
    if(data){return next(new ErrorHander("Your All Ready Booking this Package", 500));}
 
