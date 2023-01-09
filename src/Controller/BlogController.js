@@ -27,13 +27,25 @@ module.exports.addBlog = (req, res) => {
 
 
 //Get Blog by all users
-module.exports.fetchBlog = (req, res) => {
+module.exports.fetchBlogAllUser = (req, res) => {
     Blog.find({})
-        .exec((error, post) => {
+        .exec((error, blog) => {
             if (error) return res.status(500).json({ success: "false", error });
+            if (blog) {
+                res.status(200).json({ success: "true", blog });
+            }
+        });
+}
 
-            if (post) {
-                res.status(200).json({ success: "true",post });
+
+//Get Blog by all users
+module.exports.fetchBlogLoginUser = (req, res) => {
+    const {email}=req.body;
+    Blog.find({email:email})
+        .exec((error, blog) => {
+            if (error) return res.status(500).json({ success: "false", error });
+            if (blog) {
+                res.status(200).json({ success: "true", blog });
             }
         });
 }
