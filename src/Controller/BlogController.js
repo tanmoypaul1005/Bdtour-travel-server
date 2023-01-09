@@ -2,7 +2,7 @@ const Blog = require("../Models/Blog");
 
 //Add Blog
 module.exports.addBlog = (req, res) => {
-    
+
     const { title, body, image, author, description, userId, email } = req.body;
 
     Blog.findOne({ title: title })
@@ -24,5 +24,19 @@ module.exports.addBlog = (req, res) => {
             });
         });
 }
+
+
+//Get Blog by all users
+module.exports.fetchBlog = (req, res) => {
+    Blog.find({})
+        .exec((error, post) => {
+            if (error) return res.status(500).json({ success: "false", error });
+
+            if (post) {
+                res.status(200).json({ success: "true",post });
+            }
+        });
+}
+
 
 
