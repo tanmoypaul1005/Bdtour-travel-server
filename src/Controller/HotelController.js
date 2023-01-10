@@ -32,3 +32,4 @@ module.exports.deleteHotel = (req, res) => {
             if (data) return res.status(200).json({ success: 'true',data, msg:"Hotel Delete Successfully" })
         });
 }
+
