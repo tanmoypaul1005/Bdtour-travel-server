@@ -1,7 +1,9 @@
 const RelatedProduct = require("../Models/RelatedProduct");
 
 module.exports.AddRelatedProduct = (req, res) => {
+  
   const { product, productId } = req.body;
+
   console.log(product);
   RelatedProduct.find({ user: productId }).exec((error, data) => {
     if (error) return res.status(201).json({ error });
