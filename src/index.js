@@ -50,6 +50,7 @@ app.use('/api',CategoryRoute);
 // app.use('/api',OrderRoute);
 app.use('/api',BookingRoute);
 app.use('/api',BlogRoute);
+app.use('/api',HotelRoute);
 // app.use('/api',RelatedProductRoute);
 app.use('/api',TourPackageRoute);
 
