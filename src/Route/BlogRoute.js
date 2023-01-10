@@ -1,5 +1,5 @@
 const app=require('express');
-const { deleteBlog, addBlog, fetchBlogAllUser, fetchBlogLoginUser, addCommentBlog } = require('../Controller/BlogController');
+const { deleteBlog, addBlog, fetchBlogAllUser, fetchBlogLoginUser, addCommentBlog, detailBlog } = require('../Controller/BlogController');
 const router=app.Router();
 
 router.post("/blog/add",addBlog);
