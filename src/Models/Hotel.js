@@ -26,7 +26,7 @@ const HotelSchema=new mongoose.Schema({
         required: true,
       },
 
-      Hotel_rating:{
+      hotel_rating:{
         type:Number,
         required:true,
       }
