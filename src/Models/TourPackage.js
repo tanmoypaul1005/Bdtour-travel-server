@@ -37,9 +37,9 @@ const TourPackageSchema = new mongoose.Schema(
     },
 
     short_description: {
-        type: String,
-        required: true,
-      },
+      type: String,
+      required: true,
+    },
 
     package_startDate: {
       type: String,
@@ -47,24 +47,24 @@ const TourPackageSchema = new mongoose.Schema(
     },
 
     package_endDate: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
 
     place: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
 
     price: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
 
     related_package: [
       {
-        package: {type: mongoose.Schema.Types.ObjectId,ref: "TourPackage"},
-      },
+        package: { type: mongoose.Schema.Types.ObjectId, ref: "TourPackage" },
+      }
     ],
   },
   { timestamps: true }

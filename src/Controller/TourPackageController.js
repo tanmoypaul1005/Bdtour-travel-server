@@ -56,10 +56,10 @@ module.exports.getTourPackageDetails=(req,res)=>{
 // related Packages add
 module.exports.addRelatedPackages = async (req, res) => {
 
-  TourPackage.findOneAndUpdate({ _id: postId }, { $push: { package: req.body.tourPackageId } },
+  TourPackage.findOneAndUpdate({ _id: req.body.postId }, { $push: { related_package: {package:req.body.tourPackageId} } },
 
-      function (error, success) {
-          if ({ error }) {
+      function (error, data) {
+          if (error) {
               res.status(500).json({ success: "false", error });
               console.log(error);
           } else {
