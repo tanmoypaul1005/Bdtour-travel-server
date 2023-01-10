@@ -38,6 +38,7 @@ const RelatedProductRoute=require('./Route/RelatedProductRoute');
 const TourPackageRoute=require('./Route/TourPackageRoute');
 const BookingRoute=require('./Route/BookingRoute');
 const BlogRoute=require('./Route/BlogRoute');
+const HotelRoute=require('./Route/HotelRoute');
 
 // app.use('/api',AdminRoutes);
 // app.use('/api',UserRoutes);
