@@ -1,7 +1,7 @@
 
 const Hotel = require("../Models/Hotel");
 //Add Hotel
-module.exports.addTourPackage=(req,res)=>{
+module.exports.addHotel=(req,res)=>{
     const{ title,role,description,short_description,package_startDate,package_endDate,place,price,image,room_type,hotel_name}=req.body; 
 
     Hotel.findOne({title:title})
