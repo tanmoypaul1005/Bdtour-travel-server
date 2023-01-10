@@ -36,7 +36,8 @@ const OrderRoute=require('./Route/OrderRoute');
 const sslRoute=require('./Route/sslRoute');
 const RelatedProductRoute=require('./Route/RelatedProductRoute');
 const TourPackageRoute=require('./Route/TourPackageRoute');
-const BookingRoute=require('./Route/BookingRoute')
+const BookingRoute=require('./Route/BookingRoute');
+const BlogRoute=require('./Route/BlogRoute');
 
 // app.use('/api',AdminRoutes);
 // app.use('/api',UserRoutes);
@@ -47,6 +48,7 @@ app.use('/api',CategoryRoute);
 // app.use('/api',ReviewRoute);
 // app.use('/api',OrderRoute);
 app.use('/api',BookingRoute);
+app.use('/api',BlogRoute);
 // app.use('/api',RelatedProductRoute);
 app.use('/api',TourPackageRoute);
 
