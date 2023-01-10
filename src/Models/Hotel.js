@@ -21,7 +21,11 @@ const HotelSchema=new mongoose.Schema({
         type:Number,
         required:true,
         trim:true, 
-    }
+    },
+    room_type: {
+        type: String,
+        required: true,
+      },
 
 }, { timestamps: true })
 
