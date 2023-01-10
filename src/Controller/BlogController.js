@@ -25,7 +25,6 @@ module.exports.addBlog = (req, res) => {
         });
 }
 
-
 //Get Blog by all users
 module.exports.fetchBlogAllUser = (req, res) => {
     Blog.find({})
@@ -50,7 +49,6 @@ module.exports.deleteBlog = (req, res) => {
         });
 }
 
-
 //Get Blog by all users
 module.exports.fetchBlogLoginUser = (req, res) => {
     const {email}=req.body;
@@ -62,7 +60,6 @@ module.exports.fetchBlogLoginUser = (req, res) => {
             }
         });
 }
-
 
 //get Blog Details
 module.exports.detailBlog = (req, res) => {
@@ -78,7 +75,6 @@ module.exports.detailBlog = (req, res) => {
             });
     }
 }
-
 
 //Comment Blog
 module.exports.postComment = async (req, res) => {
