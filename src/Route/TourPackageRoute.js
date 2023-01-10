@@ -7,5 +7,5 @@ router.post('/tour-package/add',addTourPackage);
 router.get('/tour-package/get',getTourPackage);
 router.post('/tour-package/delete',deleteTourPackage);
 router.get('/tour-package/details/:tourPackageId',getTourPackageDetails);
-router.get('/tour-package/related-package/add',addRelatedPackages);
+router.post('/tour-package/related-package/add',addRelatedPackages);
 module.exports = router;
