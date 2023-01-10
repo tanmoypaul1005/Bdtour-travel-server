@@ -32,7 +32,7 @@ module.exports.fetchBlogAllUser = (req, res) => {
         .exec((error, blog) => {
             if (error) return res.status(500).json({ success: "false", error });
             if (blog) {
-                res.status(200).json({ success: "true", blog });
+                res.status(200).json({ success: "true", data });
             }
         });
 }
@@ -51,4 +51,17 @@ module.exports.fetchBlogLoginUser = (req, res) => {
 }
 
 
+//get Blog Details
+module.exports.detailBlog = (req, res) => {
 
+    if (req.body.id) {
+        Blog.findOne({ _id: req.body.id })
+            .exec((error, data) => {
+                if (error) return res.status(500).json({ success: "false", error });
+
+                if (data) {
+                    res.status(201).json({ success: "true",data });
+                }
+            });
+    }
+}
