@@ -77,7 +77,7 @@ module.exports.detailBlog = (req, res) => {
 }
 
 //Comment Blog
-module.exports.postComment = async (req, res) => {
+module.exports.addCommentBlog = async (req, res) => {
     const { postId, comment, name } = req.body.commentData;
     Blog.findOneAndUpdate({ _id: postId }, { $push: { comments: req.body.commentData } },
 
