@@ -55,16 +55,16 @@ module.exports.getTourPackageDetails=(req,res)=>{
 
 // related Packages add
 module.exports.adRelatedPackages = async (req, res) => {
-  const { postId, comment, name } = req.body.commentData;
-  TourPackage.findOneAndUpdate({ _id: postId }, { $push: { comments: req.body.commentData } },
+
+  TourPackage.findOneAndUpdate({ _id: postId }, { $push: { package: req.body.tourPackageId } },
 
       function (error, success) {
           if ({ error }) {
               res.status(500).json({ success: "false", error });
               console.log(error);
           } else {
-              res.status(200).json({ msg: 'Your comment has been published', success: "true",data });
-              console.log({ msg: 'Your comment has been published', success: "true" });
+              res.status(200).json({ msg: 'Your Related Package has been Add', success: "true",data });
+              console.log({ msg: 'Your Related Package has been Add', success: "true" });
           }
       });
 }

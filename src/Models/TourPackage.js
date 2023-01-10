@@ -60,6 +60,12 @@ const TourPackageSchema = new mongoose.Schema(
         type: String,
         required: true,
     },
+
+    related_package: [
+      {
+        package: {type: mongoose.Schema.Types.ObjectId,ref: "TourPackage"},
+      },
+    ],
   },
   { timestamps: true }
 );
