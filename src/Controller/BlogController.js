@@ -65,3 +65,22 @@ module.exports.detailBlog = (req, res) => {
             });
     }
 }
+
+
+//Comment Blog
+module.exports.postComment = async (req, res) => {
+
+    const { postId, comment, name } = req.body.commentData;
+
+    Blog.findOneAndUpdate({ _id: postId }, { $push: { comments: req.body.commentData } },
+
+        function (error, success) {
+            if ({ error }) {
+                res.status(500).json({ success: "false", error });
+                console.log(error);
+            } else {
+                res.status(200).json({ msg: 'Your comment has been published', success: "true",data });
+                console.log({ msg: 'Your comment has been published', success: "true" });
+            }
+        });
+}
