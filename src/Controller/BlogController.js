@@ -37,6 +37,19 @@ module.exports.fetchBlogAllUser = (req, res) => {
         });
 }
 
+//Delete Blog
+module.exports.deleteBlog = (req, res) => {
+    
+    Blog.findOneAndDelete({ _id: req.body.id })
+        .exec((error, data) => {
+            if (error) return res.status(500).json({success: "false", error });
+
+            if (data) {
+                return res.status(200).json({ massage: "your Post is successfully Delete", data ,success: "true"});
+            }
+        });
+}
+
 
 //Get Blog by all users
 module.exports.fetchBlogLoginUser = (req, res) => {
@@ -69,9 +82,7 @@ module.exports.detailBlog = (req, res) => {
 
 //Comment Blog
 module.exports.postComment = async (req, res) => {
-
     const { postId, comment, name } = req.body.commentData;
-
     Blog.findOneAndUpdate({ _id: postId }, { $push: { comments: req.body.commentData } },
 
         function (error, success) {
@@ -84,3 +95,4 @@ module.exports.postComment = async (req, res) => {
             }
         });
 }
+
