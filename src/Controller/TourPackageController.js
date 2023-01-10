@@ -54,7 +54,7 @@ module.exports.getTourPackageDetails=(req,res)=>{
 }
 
 // related Packages add
-module.exports.adRelatedPackages = async (req, res) => {
+module.exports.addRelatedPackages = async (req, res) => {
 
   TourPackage.findOneAndUpdate({ _id: postId }, { $push: { package: req.body.tourPackageId } },
 
