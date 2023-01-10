@@ -9,5 +9,4 @@ router.post("/blog/delete",deleteBlog);
 router.post("/blog/details",detailBlog);
 router.post("/blog/comment/add",addCommentBlog);
 
-
 module.exports = router
