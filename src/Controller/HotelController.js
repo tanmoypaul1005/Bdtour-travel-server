@@ -25,3 +25,12 @@ module.exports.getHotel = (req, res) => {
             if (data) return res.status(200).json({ success: 'true', data })
         });
 }
+
+//Delete Hotel
+module.exports.deleteHotel = (req, res) => {
+    Hotel.findOneAndDelete({id:req.body.id})
+        .exec((error, data) => {
+            if (error) return res.status(500).json({ error, success: 'false' })
+            if (data) return res.status(200).json({ success: 'true',data, msg:"Hotel Delete Successfully" })
+        });
+}
