@@ -1,6 +1,5 @@
 const Hotel = require("../Models/Hotel");
 
-
 //Add Hotel
 module.exports.addHotel = (req, res) => {
 
@@ -15,7 +14,6 @@ module.exports.addHotel = (req, res) => {
             });
         });
 }
-
 
 //get Hotel
 module.exports.getHotel = (req, res) => {
