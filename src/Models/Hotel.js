@@ -17,16 +17,19 @@ const HotelSchema=new mongoose.Schema({
         required:true,
         trim:true,
     },
-    noofbed:{
+    numbed:{
         type:Number,
-        required:true,
-        trim:true, 
+        required:true, 
     },
     room_type: {
         type: String,
         required: true,
       },
 
+      Hotel_rating:{
+        type:Number,
+        required:true,
+      }
 }, { timestamps: true })
 
 module.exports("Hotel",HotelSchema)
