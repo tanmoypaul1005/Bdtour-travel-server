@@ -76,13 +76,17 @@ module.exports.addReviewTourPackage = (req, res) => {
   TourPackage.findOneAndUpdate({ _id: tourPackageId },
     { $push: { reviews: reviewsItem } }, { new: true, upsert: true, setDefaultsOnInsert: true })
     .exec((error, data) => {
-      if (error) { return res.status(500).json({ error,success: "false" }); }
-      if (data) { 
-        data.reviews.map((item,index)=>(
-          console.log(item.star)
-        ))
-        return res.status(200).json({ msg: 'Your Review Add successfully', data,success: "true" });
-       }
+      if (error) { return res.status(500).json({ error, success: "false" }); }
+      if (data) {
+        data.reviews.map((item, index) => {
+          let a = 0;
+          a = a + item.star
+          console.log(a)
+        })
+        // const sum = data.reviews.star.reduce((partialSum, a) => partialSum + a, 0);
+        // console.log(sum);
+        return res.status(200).json({ msg: 'Your Review Add successfully', data, success: "true" });
+      }
     })
 }
 
