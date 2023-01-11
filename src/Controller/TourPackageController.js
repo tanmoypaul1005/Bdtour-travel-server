@@ -78,9 +78,7 @@ module.exports.addReviewTourPackage = (req, res) => {
     .exec((error, data) => {
       if (error) { return res.status(500).json({ error,success: "false" }); }
       if (data) { 
-        TourPackage.find({}).exec((error,data)=>{
-          console.log(data.reviews.star)
-        })
+        console.log(data)
         return res.status(200).json({ msg: 'Your Review Add successfully', data,success: "true" });
        }
     })
