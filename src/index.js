@@ -33,7 +33,6 @@ const CartRoute=require('./Route/CartRoute');
 const AddressRoute=require('./Route/AddressRoute');
 const OrderRoute=require('./Route/OrderRoute');
 const sslRoute=require('./Route/sslRoute');
-const RelatedProductRoute=require('./Route/RelatedProductRoute');
 const TourPackageRoute=require('./Route/TourPackageRoute');
 const BookingRoute=require('./Route/BookingRoute');
 const BlogRoute=require('./Route/BlogRoute');
