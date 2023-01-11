@@ -45,7 +45,6 @@ app.use('/api',CategoryRoute);
 // app.use('/api',ProductRoute);
 // app.use('/api',CartRoute);
 // app.use('/api',AddressRoute);
-// app.use('/api',ReviewRoute);
 // app.use('/api',OrderRoute);
 app.use('/api',BookingRoute);
 app.use('/api',BlogRoute);
