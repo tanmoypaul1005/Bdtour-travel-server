@@ -70,7 +70,7 @@ module.exports.addRelatedPackages = async (req, res) => {
 }
 
 // Tour Package Review add
-module.exports.addReview = (req, res) => {
+module.exports.addReviewTourPackage = (req, res) => {
   const { tourPackageId, comment, star, user } = req.body;
   const reviewsItem = { comment, star, user }
   TourPackage.findOneAndUpdate({ _id: tourPackageId },
@@ -78,6 +78,9 @@ module.exports.addReview = (req, res) => {
     .exec((error, data) => {
       if (error) { return res.status(500).json({ error,success: "false" }); }
       if (data) { 
+        TourPackage.find({}).exec((error,data)=>{
+          console.log(data.reviews.star)
+        })
         return res.status(200).json({ msg: 'Your Review Add successfully', data,success: "true" });
        }
     })
