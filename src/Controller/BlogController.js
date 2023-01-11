@@ -70,7 +70,7 @@ module.exports.detailBlog = (req, res) => {
                 if (error) return res.status(500).json({ success: "false", error });
 
                 if (data) {
-                    res.status(201).json({ success: "true",data });
+                    res.status(201).json({ success: "true",data, msg:"Your Blog successfully Delete"});
                 }
             });
     }
