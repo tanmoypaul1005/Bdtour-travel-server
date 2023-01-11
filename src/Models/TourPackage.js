@@ -66,6 +66,14 @@ const TourPackageSchema = new mongoose.Schema(
         package: { type: mongoose.Schema.Types.ObjectId, ref: "TourPackage" },
       }
     ],
+    reviews: [
+      {
+        user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+        comment: { type: String },
+        star: { type: Number },
+        required: false,
+      },
+    ],
   },
   { timestamps: true }
 );
