@@ -1,7 +1,6 @@
 const Booking = require("../Models/Booking");
 const ErrorHander = require("../utils/ErrorHander");
 
-
 module.exports.addBooking=(req,res,next)=>{
 
   const{ name,email,tourPackageId,room_type,address,phone}=req.body; 
@@ -17,7 +16,6 @@ module.exports.addBooking=(req,res,next)=>{
    });
   });
 }
-
 
 module.exports.getBooking=(req,res)=>{
     Booking.find({})
