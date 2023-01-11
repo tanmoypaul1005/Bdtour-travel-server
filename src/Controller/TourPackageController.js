@@ -81,9 +81,11 @@ module.exports.addReviewTourPackage = (req, res) => {
         let sum = 0;
         data.reviews.map((item, index) => {sum += item.star;})
         console.log(sum)
-        TourPackage.findOneAndUpdate({_id: tourPackageId},{$push:{total_reviews:sum}},
-        { new: true, upsert: true, setDefaultsOnInsert: true })
-        return res.status(200).json({ msg: 'Your Review Add successfully', data, success: "true" });
+        TourPackage.findOneAndUpdate({_id: tourPackageId},{total_reviews:sum/data.reviews.length},
+        { new: true, upsert: true, setDefaultsOnInsert: true }).exec((error,data)=>{
+          return res.status(200).json({ msg: 'Your Review Add successfully', data, success: "true" });
+        })
+       
       }
     })
 }
