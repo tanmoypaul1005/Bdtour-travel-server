@@ -74,6 +74,7 @@ const TourPackageSchema = new mongoose.Schema(
         required: false,
       },
     ],
+    
     total_reviews:{
       type: Number,
     }
