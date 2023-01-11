@@ -10,5 +10,6 @@ router.post('/category/add',AddCategory);
 router.get('/category/get',getCategories);
 
 //get Product
-router.post('/categorydetail',CategoryDetail)
+router.post('/categorydetail',CategoryDetail);
+
 module.exports = router;
