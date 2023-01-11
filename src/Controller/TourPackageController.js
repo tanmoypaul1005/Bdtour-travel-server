@@ -76,7 +76,7 @@ module.exports.addReview = (req, res) => {
   TourPackage.findOneAndUpdate({ _id: tourPackageId },
     { $push: { reviews: reviewsItem } }, { new: true, upsert: true, setDefaultsOnInsert: true })
     .exec((error, data) => {
-      if (error) { return res.status(500).json({ error }); }
+      if (error) { return res.status(500).json({ error,success: "false" }); }
       if (data) { return res.status(200).json({ msg: 'Your Review Add successfully', data,success: "true" }); }
     })
 }
