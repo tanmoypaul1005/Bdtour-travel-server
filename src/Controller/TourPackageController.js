@@ -78,7 +78,6 @@ module.exports.addReviewTourPackage = (req, res) => {
     .exec((error, data) => {
       if (error) { return res.status(500).json({ error,success: "false" }); }
       if (data) { 
-        // console.log(data.reviews)
         data.reviews.map((item,index)=>(
           console.log(item.star)
         ))
