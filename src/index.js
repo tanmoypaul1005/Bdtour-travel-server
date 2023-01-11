@@ -31,7 +31,6 @@ const CategoryRoute=require('./Route/CategoryRouter');
 const ProductRoute=require('./Route/ProductRoute');
 const CartRoute=require('./Route/CartRoute');
 const AddressRoute=require('./Route/AddressRoute');
-const ReviewRoute=require('./Route/ReviewsRoutes');
 const OrderRoute=require('./Route/OrderRoute');
 const sslRoute=require('./Route/sslRoute');
 const RelatedProductRoute=require('./Route/RelatedProductRoute');
