@@ -57,7 +57,7 @@ const TourPackageSchema = new mongoose.Schema(
     },
 
     price: {
-      type: String,
+      type: Number,
       required: true,
     },
 
@@ -74,6 +74,9 @@ const TourPackageSchema = new mongoose.Schema(
         required: false,
       },
     ],
+    total_reviews:{
+      type: Number,
+    }
   },
   { timestamps: true }
 );
