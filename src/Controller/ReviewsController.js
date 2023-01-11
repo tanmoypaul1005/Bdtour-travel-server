@@ -7,6 +7,6 @@ module.exports.addReview=(req,res)=>{
     Product.findOneAndUpdate({_id:id},{ $push: {reviews:reviewsItem}}, {new: true,upsert: true,setDefaultsOnInsert: true })
     .exec((error,data)=>{
         if(error){return res.status(505).json({error});}
-        if(data){return res.status(200).json({msg:'Your  Add successfully',data});}
+        if(data){return res.status(200).json({msg:'Your Review Add successfully',data});}
     })
 }
