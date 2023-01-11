@@ -78,13 +78,10 @@ module.exports.addReviewTourPackage = (req, res) => {
     .exec((error, data) => {
       if (error) { return res.status(500).json({ error, success: "false" }); }
       if (data) {
-        data.reviews.map((item, index) => {
-          let a = 0;
-          a = a + item.star
-          console.log(a)
-        })
-        // const sum = data.reviews.star.reduce((partialSum, a) => partialSum + a, 0);
-        // console.log(sum);
+        let sum = 0;
+        data.reviews.map((item, index) => {sum += item.star;})
+        console.log(sum)
+        TourPackage.findOneAndUpdate({_id: tourPackageId},{$push:{ss:ff}})
         return res.status(200).json({ msg: 'Your Review Add successfully', data, success: "true" });
       }
     })
