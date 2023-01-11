@@ -3,7 +3,6 @@ const app = require("express");
 const { AddCategory, getCategories,CategoryDetail } = require("../Controller/CategoryController");
 const router = app.Router();
 
-
 //add category
 router.post('/category/add',AddCategory);
 
